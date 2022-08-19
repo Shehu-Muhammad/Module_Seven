@@ -1,0 +1,13 @@
+# Module Seven Python
+- More than 1-character, meaningful names
+- A full application that solves one main problem irrespective of how many features/tools are used.
+- Use of Variables
+- At least 1:
+    - Decision structure
+    - Repetition structure
+    - Use of writing to a file
+    - Use of reading from a file
+    - 1 List or Tuple
+- Functional coding only
+- Purpose of all functions commented
+- Published to Github
