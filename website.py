@@ -2,7 +2,7 @@ from functions import *
 
 title = "My Website"
 css = "<link rel=\"stylesheet\" href=\"index.css\">"
-footer = "CopyRight"
+footer = "&copy; All Rights Reserved."
 
 printHtmlOpeningAndHeadSection(title, css)
 printHtmlBodyContent()
