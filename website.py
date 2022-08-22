@@ -22,6 +22,7 @@ printHtmlBodyContent(imageSource, imageAlt, paragraph)
 addFunThing(number, fun)
 printHtmlOlList(fun)
 printHtmlFooterAndClosingTags(footer)
+readHTMLFile()
 
     
     

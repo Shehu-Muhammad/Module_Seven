@@ -69,6 +69,10 @@ def clearHtmlFile():
     file = open("index.html", 'w')
     file.close()
 
+def readHTMLFile():
+    file = open("index.html", "r")
+    print(file.read())
+
 # print html header section with title <!DOCTYPE html><head><title>title</title></head><body>
 
 # print html body section <body>

@@ -8,18 +8,21 @@ def my_function():
 def writeNameToPage():
     username = input("Enter a username: ")
     file = open("test.txt", 'a')
-    file.write(username)
+    file.write(f"My Name is {username}")
     file.close()
-# writeNameToPage()
+writeNameToPage()
 
-file = open("test.txt", 'w')
-file.close()
+def clearNameFromPage():
+    file = open("test.txt", 'w')
+    file.close()
+
+# clearNameFromPage()
 
 def readNameFromPage():
     file = open("test.txt", "r")
     print(file.read())
 
-# readNameFromPage()
+readNameFromPage()
 
 
 
