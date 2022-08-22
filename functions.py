@@ -79,3 +79,22 @@ def readHTMLFile():
     file = open("index.html", "r")
     print(file.read())
 
+# a function to run all the functions
+def main():
+    css = "<link rel=\"stylesheet\" href=\"index.css\">"
+    footer = "&copy; All Rights Reserved."
+    fun = []
+    title = input("Enter a title: ")
+    imageSource = input("Enter an image source: ")
+    imageAlt = input("Enter a description of the image: ")
+    paragraph = input("Enter a paragraph about yourself: ")
+    number_input = input("Enter number for fun: ")
+    number = int(number_input)
+
+    clearHtmlFile()
+    printHtmlOpeningAndHeadSection(title, css)
+    printHtmlBodyContent(imageSource, imageAlt, paragraph)
+    addFunThing(number, fun)
+    printHtmlOlList(fun)
+    printHtmlFooterAndClosingTags(footer)
+    readHTMLFile()
