@@ -1,11 +1,20 @@
 # a function to print the opening of an html file, the head section with a title, and link to css file
+from crypt import METHOD_SHA512
+
+
 def printHtmlOpeningAndHeadSection(title, css):
-    htmlOpening = ["<!DOCTYPE html>", "<head>", "<title>", title, "</title>", css, "</head>", "<body>"]
+    language = "<html lang=\"en\">"
+    meta1 = "<meta charset=\"UTF-8\">"
+    meta2 =	"<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">"
+    meta3 = "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
+    htmlOpening = ["<!DOCTYPE html>", language, "<head>", meta1, meta2, meta3, "<title>", title, "</title>", css, "</head>", "<body>"]
     for tag in htmlOpening:
         file = open("index.html", 'a')
         if(tag == "<head>" or tag == "</head>" or tag == "<body>"):
             file.write("\n\t")
-        elif(tag == "<title>" or tag == css):
+        elif(tag == language):
+            file.write("\n")
+        elif(tag == meta1 or tag == meta2 or tag == meta3 or tag == "<title>" or tag == css):
             file.write("\n\t\t")
         file.write(tag)
         file.close()
@@ -13,7 +22,7 @@ def printHtmlOpeningAndHeadSection(title, css):
 # a function to print the content of the body section
 def printHtmlBodyContent(imageSource, imageAlt, paragraph):
     outerDiv = "<div class=\"outerDiv\">"
-    h1 = "<h1>About Me</h2>"
+    h1 = "<h1>About Me</h1>"
     innerDivRight = "<div class=\"innerDivRight\">"
     imageSource = imageSource
     imageAlt = imageAlt
