@@ -12,6 +12,9 @@ def writeNameToPage():
     file.close()
 # writeNameToPage()
 
+file = open("test.txt", 'w')
+file.close()
+
 def readNameFromPage():
     file = open("test.txt", "r")
     print(file.read())

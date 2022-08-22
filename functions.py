@@ -65,6 +65,10 @@ def printHtmlFooterAndClosingTags(footer):
         file.write(tag)
         file.close()
 
+def clearHtmlFile():
+    file = open("index.html", 'w')
+    file.close()
+
 # print html header section with title <!DOCTYPE html><head><title>title</title></head><body>
 
 # print html body section <body>
