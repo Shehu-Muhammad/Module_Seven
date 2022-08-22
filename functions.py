@@ -1,3 +1,4 @@
+# a function to print the opening of an html file, the head section with a title, and link to css file
 def printHtmlOpeningAndHeadSection(title, css):
     htmlOpening = ["<!DOCTYPE html>", "<head>", "<title>", title, "</title>", css, "</head>", "<body>"]
     for tag in htmlOpening:
@@ -8,7 +9,8 @@ def printHtmlOpeningAndHeadSection(title, css):
             file.write("\n\t\t")
         file.write(tag)
         file.close()
-        
+
+# a function to print the content of the body section
 def printHtmlBodyContent(imageSource, imageAlt, paragraph):
     outerDiv = "<div class=\"outerDiv\">"
     h1 = "<h1>About Me</h2>"
@@ -32,12 +34,14 @@ def printHtmlBodyContent(imageSource, imageAlt, paragraph):
             file.write("\n\t\t\t")
         file.write(tag)
         file.close()
-        
+
+# a function to add fun things to a list
 def addFunThing(number, fun):
     for number in range(number):
         thing = input(f"Enter a fun thing to do {number+1}: ")
         fun.append(thing)
-        
+
+# a function to print the ordered list to the html
 def printHtmlOlList(task):
     file = open("index.html", "a")
     file.write("\n\t\t\t\t")
@@ -49,7 +53,7 @@ def printHtmlOlList(task):
     file.write("\t\t\t\t</ol>\n")
     file.write("\t\t\t</div>")
         
-
+# a function to print the footer and closing tags of the html
 def printHtmlFooterAndClosingTags(footer):
     htmlFooter = ["<footer>", footer, "</footer>", "</div>", "</body>","</html>"]
     for tag in htmlFooter:
@@ -65,20 +69,13 @@ def printHtmlFooterAndClosingTags(footer):
         file.write(tag)
         file.close()
 
+# a function to clear the HTML file
 def clearHtmlFile():
     file = open("index.html", 'w')
     file.close()
 
+# a function to read the HTML file
 def readHTMLFile():
     file = open("index.html", "r")
     print(file.read())
 
-# print html header section with title <!DOCTYPE html><head><title>title</title></head><body>
-
-# print html body section <body>
-
-# print information for body section divs, images, uls, lis
-
-# print html footer section <footer></footer></body></html>
-
-# print css file
