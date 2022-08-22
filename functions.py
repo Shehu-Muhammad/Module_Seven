@@ -52,6 +52,7 @@ def printHtmlOlList(task):
         file.write(f"<li>{task}</li>\n")
     file.write("\t\t\t\t</ol>\n")
     file.write("\t\t\t</div>")
+    file.close()
         
 # a function to print the footer and closing tags of the html
 def printHtmlFooterAndClosingTags(footer):
@@ -78,6 +79,7 @@ def clearHtmlFile():
 def readHTMLFile():
     file = open("index.html", "r")
     print(file.read())
+    file.close()
 
 # a function to run all the functions
 def main():
