@@ -1,6 +1,6 @@
 from functions import *
 
-# Example of 
+# Example
 # title = "My Website"
 # imageSource = "https://images.pexels.com/photos/2233442/pexels-photo-2233442.jpeg?cs=srgb&dl=pexels-markus-distelrath-2233442.jpg&fm=jpg"
 # imageAlt = "A picture of me"

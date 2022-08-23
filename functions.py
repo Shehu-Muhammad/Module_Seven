@@ -100,12 +100,16 @@ def main():
     imageAlt = input("Enter a description of the image: ")
     paragraph = input("Enter a paragraph about yourself: ")
     number_input = input("Enter number for fun: ")
-    number = int(number_input)
-
-    clearHtmlFile()
-    printHtmlOpeningAndHeadSection(title, css)
-    printHtmlBodyContent(imageSource, imageAlt, paragraph)
-    addFunThing(number, fun)
-    printHtmlOlList(fun)
-    printHtmlFooterAndClosingTags(footer)
-    readHTMLFile()
+    
+    try:
+        number = int(number_input)
+    except ValueError:
+        print("The number entered was not an integer.")
+    finally:
+        clearHtmlFile()
+        printHtmlOpeningAndHeadSection(title, css)
+        printHtmlBodyContent(imageSource, imageAlt, paragraph)
+        addFunThing(number, fun)
+        printHtmlOlList(fun)
+        printHtmlFooterAndClosingTags(footer)
+        readHTMLFile()
