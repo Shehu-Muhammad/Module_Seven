@@ -2,7 +2,8 @@
 from crypt import METHOD_SHA512
 
 
-def printHtmlOpeningAndHeadSection(title, css):
+def printHtmlOpeningAndHeadSection(title):
+    css = "<link rel=\"stylesheet\" href=\"index.css\">"
     language = "<html lang=\"en\">"
     meta1 = "<meta charset=\"UTF-8\">"
     meta2 =	"<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">"
@@ -20,15 +21,16 @@ def printHtmlOpeningAndHeadSection(title, css):
         file.close()
 
 # a function to print the content of the body section
-def printHtmlBodyContent(imageSource, imageAlt, paragraph):
+def printHtmlBodyContent(name, imageSource, imageAlt, paragraph):
+    name = name
     outerDiv = "<div class=\"outerDiv\">"
-    h1 = "<h1>About Me</h1>"
+    h1 = f"<h1>About {name}</h1>"
     innerDivRight = "<div class=\"innerDivRight\">"
     imageSource = imageSource
     imageAlt = imageAlt
     imageTag = f"<img class=\"center\" src=\"{imageSource}\" alt=\"{imageAlt}\">"
     paragraph = f"<p>{paragraph}</p>"
-    h2 = "<h2>Things I like to do for Fun</h2>"
+    h2 = f"<h2>Things {name} likes to do for Fun</h2>"
     innerDivLeft = "<div class=\"innerDivLeft\">"
     htmlBody = [outerDiv, h1, innerDivRight, imageTag, paragraph, "</div>", innerDivLeft, h2]
     for tag in htmlBody:
@@ -64,7 +66,8 @@ def printHtmlOlList(task):
     file.close()
         
 # a function to print the footer and closing tags of the html
-def printHtmlFooterAndClosingTags(footer):
+def printHtmlFooterAndClosingTags():
+    footer = "&copy; All Rights Reserved."
     htmlFooter = ["<footer>", footer, "</footer>", "</div>", "</body>","</html>"]
     for tag in htmlFooter:
         file = open("index.html", "a")
@@ -90,28 +93,42 @@ def readHTMLFile():
     print(file.read())
     file.close()
 
-# a function to run all the functions
-def main():
-    css = "<link rel=\"stylesheet\" href=\"index.css\">"
-    footer = "&copy; All Rights Reserved."
-    fun = []
+def askForQuestions():
+    name = input("Enter your name: ")
     title = input("Enter a title: ")
     imageSource = input("Enter an image source: ")
     imageAlt = input("Enter a description of the image: ")
     paragraph = input("Enter a paragraph about yourself: ")
     number_input = input("Enter number for fun: ")
-    
+
+    return name, title, imageSource, imageAlt, paragraph, number_input
+
+# a function to run all the functions
+def main():
+    fun = []
+    goodNumber = False
+
     try:
+        name, title, imageSource, imageAlt, paragraph, number_input = askForQuestions()
         number = int(number_input)
-    except ValueError:
-        print("The number entered was not an integer.")
-    else:
-        number = 0
+    except ValueError as valueErrorExceptionThrown:
+        print("Specific value details: ", valueErrorExceptionThrown)
+
+        while not goodNumber:
+            try:
+                number_input = input("Enter number for fun: ")
+                number = int(number_input)
+            except:
+                print("Specific value details: ", valueErrorExceptionThrown)
+            else:
+                goodNumber = True
+                continue
+
     finally:
         clearHtmlFile()
-        printHtmlOpeningAndHeadSection(title, css)
-        printHtmlBodyContent(imageSource, imageAlt, paragraph)
+        printHtmlOpeningAndHeadSection(title)
+        printHtmlBodyContent(name, imageSource, imageAlt, paragraph)
         addFunThing(number, fun)
         printHtmlOlList(fun)
-        printHtmlFooterAndClosingTags(footer)
+        printHtmlFooterAndClosingTags()
         readHTMLFile()
