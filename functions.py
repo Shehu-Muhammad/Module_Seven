@@ -105,6 +105,8 @@ def main():
         number = int(number_input)
     except ValueError:
         print("The number entered was not an integer.")
+    else:
+        number = 0
     finally:
         clearHtmlFile()
         printHtmlOpeningAndHeadSection(title, css)
