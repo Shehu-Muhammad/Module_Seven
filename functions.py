@@ -1,7 +1,4 @@
 # a function to print the opening of an html file, the head section with a title, and link to css file
-from crypt import METHOD_SHA512
-
-
 def printHtmlOpeningAndHeadSection(title):
     css = "<link rel=\"stylesheet\" href=\"index.css\">"
     language = "<html lang=\"en\">"
@@ -93,6 +90,7 @@ def readHTMLFile():
     print(file.read())
     file.close()
 
+# a function to ask for information from the user
 def askForQuestions():
     name = input("Enter your name: ")
     title = input("Enter a title: ")
