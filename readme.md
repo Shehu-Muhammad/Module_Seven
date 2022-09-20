@@ -12,6 +12,8 @@
 - Purpose of all functions commented
 - Published to Github
 ## Python Website Generator
+## Screenshots
+![A screenshot of website built by running python application](https://github.com/Shehu-Muhammad/Module_Seven/blob/601dea2fe3935821c586a81f30902180ff2008f1/Screen%20Shot%202022-09-20%20at%201.01.56%20PM.png)
 ## Built with
 * [HTML5](https://webplatform.github.io/docs/html/html5/) - The language used to create the content
 * [CSS3](https://devdocs.io/css/) - The language used to style the content
